@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -16,6 +15,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Link } from "next-view-transitions";
 
 export default function Component() {
   return (
@@ -237,8 +237,8 @@ export default function Component() {
                   />
                 </div>
                 <CardHeader className="p-4 flex flex-col gap-2">
-                  <CardTitle className="text-xl font-semibold">
-                    Cozy and Quiet Cabin in the Woods
+                  <CardTitle className="text-xl font-semibold demo">
+                    Campsites in Santa Cruz
                   </CardTitle>
                   <CardDescription className="text-sm">
                     Perfect for nature lovers. Surrounded by trees, with hiking

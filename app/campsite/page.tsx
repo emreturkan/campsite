@@ -38,8 +38,10 @@ export default function Component() {
         </div>
       </div>
       <div className="flex items-start md:items-center flex-col md:flex-row gap-4 md:gap-8">
-        <div className="grid gap-2 flex-1">
-          <div className="text-2xl font-semibold">Campsites in Santa Cruz</div>
+        <div className="grid gap-2 flex-1 demo-box">
+          <div className="text-2xl font-semibold demo">
+            Campsites in Santa Cruz
+          </div>
           <p className="text-gray-500 text-xs dark:text-gray-400">
             Beautiful camping spots around the Golden State
           </p>

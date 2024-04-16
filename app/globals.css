@@ -131,3 +131,16 @@
   border-bottom: 3px solid #2f2e2e;
   transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
+
+.demo {
+  view-transition-name: demo-title;
+  width: fit-content;
+}
+
+.demo-box {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  width: 600px;
+  max-width: 100%;
+  border-radius: 3px;
+}
