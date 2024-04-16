@@ -2,21 +2,41 @@ import { Separator } from "@/components/ui/separator";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { CardContent, Card } from "@/components/ui/card";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Link1Icon, Link2Icon, LinkBreak1Icon } from "@radix-ui/react-icons";
+import Image from "next/image";
 
 export default function Component() {
   return (
-    <div className="max-w-3xl grid gap-8 mx-auto p-4 sm:py-8">
+    <div className="max-w-3xl relative grid gap-8 mx-auto p-4 sm:py-8">
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          <ArrowLeftIcon className="w-6 h-6" />
+        <div className="flex items-center gap-4">
+          <Link href={"/"}>
+            <Button
+              className="rounded-full  gap-1 p-3 border"
+              variant="default"
+            >
+              <ChevronLeftIcon className="w-5 h-5" />
+              <span>Geri</span>
+            </Button>
+          </Link>
           <h1 className="text-3xl font-bold tracking-tighter">
-            Camping Equipment Checklist
+            Kamp Ekipmanları Kontrol Listesi
           </h1>
         </div>
         <p className="text-gray-500 dark:text-gray-400">
-          Be prepared for your next camping adventure with this comprehensive
-          equipment checklist. Simply check off the items you have and add any
-          additional gear you'll need.
+          Bu kapsamlı ekipman kontrol listesi ile bir sonraki kamp maceranıza
+          hazırlıklı olun. Sahip olduğunuz eşyaları işaretleyin ve ihtiyacınız
+          olacak ek malzemeleri ekleyin.
         </p>
       </div>
       <Card className="grid gap-4 rounded-xl border">
@@ -24,42 +44,75 @@ export default function Component() {
           <div className="flex items-center gap-4">
             <TentIcon className="w-10 h-10" />
             <div className="grid gap-0.5">
-              <h3 className="font-semibold">Shelter</h3>
+              <h3 className="font-semibold">Barınak</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                Your home away from home.
+                Evinizden uzaktaki eviniz.
               </p>
             </div>
           </div>
           <Separator />
           <div className="grid gap-2">
             <div className="flex items-center gap-2">
-              <Checkbox className="h-4 w-4" id="tent" />
+              <Checkbox className="h-4 w-4 " id="tent" />
               <Label className="form-checkbox ml-2" htmlFor="tent">
-                Tent
+                Çadır
               </Label>
+              <Dialog>
+                <DialogTrigger>
+                  <Link2Icon />
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Husky Bird 3 Plus</DialogTitle>
+                    <DialogDescription>
+                      <div className="flex gap-4">
+                        <Image
+                          src="/husky.webp"
+                          className="rounded-lg"
+                          height={100}
+                          width={100}
+                          alt="Husky Bird 3 Plus"
+                        />
+                        <div className="grid gap-2">
+                          <h3 className="font-semibold">
+                            Fiyat:{" "}
+                            <span className="text-orange-400">$ 1.500</span>
+                          </h3>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
+                            Bird çadırlarının basit yapısı denenmiş ve test
+                            edilmiş ve klasik olma yolunda yavaşça
+                            ilerlemektedir.
+                          </p>
+                          <Button size="sm">Satın Al</Button>
+                        </div>
+                      </div>
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="sleeping-bag" />
               <Label className="form-checkbox ml-2" htmlFor="sleeping-bag">
-                Sleeping bag
+                Uyku tulumu
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="pillow" />
               <Label className="form-checkbox ml-2" htmlFor="pillow">
-                Pillow
+                Yastık
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="air-mattress" />
               <Label className="form-checkbox ml-2" htmlFor="air-mattress">
-                Air mattress
+                Şişme yatak
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="tarp" />
               <Label className="form-checkbox ml-2" htmlFor="tarp">
-                Tarp
+                Branda
               </Label>
             </div>
           </div>
@@ -70,9 +123,9 @@ export default function Component() {
           <div className="flex items-center gap-4">
             <FlameIcon className="w-10 h-10" />
             <div className="grid gap-0.5">
-              <h3 className="font-semibold">Fire and Cooking</h3>
+              <h3 className="font-semibold">Ateş ve Yemek Pişirme</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                For s'mores and campfire feasts.
+                Yemekler ve kamp ateşi ziyafetleri için.
               </p>
             </div>
           </div>
@@ -81,31 +134,31 @@ export default function Component() {
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="stove" />
               <Label className="form-checkbox ml-2" htmlFor="stove">
-                Camp stove
+                Kamp ocağı
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="lantern" />
               <Label className="form-checkbox ml-2" htmlFor="lantern">
-                Lantern
+                Fener
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="cooler" />
               <Label className="form-checkbox ml-2" htmlFor="cooler">
-                Cooler
+                Soğutucu
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="matches" />
               <Label className="form-checkbox ml-2" htmlFor="matches">
-                Matches
+                Kibritler
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="camp-chair" />
               <Label className="form-checkbox ml-2" htmlFor="camp-chair">
-                Camp chair
+                Kamp sandalyesi
               </Label>
             </div>
           </div>
@@ -116,9 +169,9 @@ export default function Component() {
           <div className="flex items-center gap-4">
             <PocketKnifeIcon className="w-10 h-10" />
             <div className="grid gap-0.5">
-              <h3 className="font-semibold">Health and Safety</h3>
+              <h3 className="font-semibold">Sağlık ve Güvenlik</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                Be prepared for emergencies.
+                Acil durumlar için hazırlıklı olun.
               </p>
             </div>
           </div>
@@ -127,31 +180,31 @@ export default function Component() {
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="first-aid-kit" />
               <Label className="form-checkbox ml-2" htmlFor="first-aid-kit">
-                First aid kit
+                İlk yardım çantası
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="insect-repellent" />
               <Label className="form-checkbox ml-2" htmlFor="insect-repellent">
-                Insect repellent
+                Böcek savar
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="sunscreen" />
               <Label className="form-checkbox ml-2" htmlFor="sunscreen">
-                Sunscreen
+                Güneş Kremi
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="map-compass" />
               <Label className="form-checkbox ml-2" htmlFor="map-compass">
-                Map and compass
+                Harita ve pusula
               </Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4" id="whistle" />
               <Label className="form-checkbox ml-2" htmlFor="whistle">
-                Whistle
+                Düdük
               </Label>
             </div>
           </div>
@@ -242,6 +295,25 @@ function TentIcon(props: React.SVGProps<SVGSVGElement>) {
       <path d="M3 20h18" />
       <path d="m12 15-3 5" />
       <path d="m12 15 3 5" />
+    </svg>
+  );
+}
+
+function ChevronLeftIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m15 18-6-6 6-6" />
     </svg>
   );
 }

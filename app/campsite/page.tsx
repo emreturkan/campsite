@@ -13,9 +13,9 @@ import {
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 
-export default function Component() {
+export default function Campsite() {
   return (
-    <div className="container grid gap-8 py-24">
+    <div className=" grid gap-8 py-12">
       <div className="flex items-center gap-8">
         <Link href={"/"}>
           <Button className="rounded-full  gap-1 p-3 border" variant="default">
@@ -278,7 +278,7 @@ export default function Component() {
                 <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
                   <Card>
                     <Link
-                      className="absolute inset-0 z-10 rounded-lg overflow-hidden"
+                      className=" inset-0 z-10 rounded-lg overflow-hidden"
                       href="#"
                     >
                       <span className="sr-only">View</span>
@@ -328,7 +328,7 @@ export default function Component() {
                   </Card>
                   <Card>
                     <Link
-                      className="absolute inset-0 z-10 rounded-lg overflow-hidden"
+                      className=" inset-0 z-10 rounded-lg overflow-hidden"
                       href="#"
                     >
                       <span className="sr-only">View</span>
@@ -378,7 +378,7 @@ export default function Component() {
                   </Card>
                   <Card>
                     <Link
-                      className="absolute inset-0 z-10 rounded-lg overflow-hidden"
+                      className=" inset-0 z-10 rounded-lg overflow-hidden"
                       href="#"
                     >
                       <span className="sr-only">View</span>
@@ -428,7 +428,7 @@ export default function Component() {
                   </Card>
                   <Card>
                     <Link
-                      className="absolute inset-0 z-10 rounded-lg overflow-hidden"
+                      className=" inset-0 z-10 rounded-lg overflow-hidden"
                       href="#"
                     >
                       <span className="sr-only">View</span>

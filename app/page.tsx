@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -9,411 +10,285 @@ import {
 } from "@/components/ui/card";
 import { StarIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+
 import { Link } from "next-view-transitions";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Component() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+
+    slidesToScroll: 4,
+  };
   return (
-    <div className="container grid gap-2">
-      <div className="border-b border-gray-200 dark:border-gray-800">
-        <div className=" px-12 py-2 md:py-3">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center gap-2">
-              <TreesIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-              <span className="font-medium text-gray-500 dark:text-gray-400">
-                Enjoy the great outdoors at our campsite.
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Link
-                className="text-gray-500 dark:text-gray-400 hover:underline hover:text-gray-900"
-                href="#"
-              >
-                Book Now
-              </Link>
-            </div>
+    <div>
+      <section className="w-full pt-6 md:pt-12 lg:py-24">
+        <div className="container grid items-center gap-4 px-4 sm:px-6 md:gap-10 lg:grid-cols-2 lg:px-10">
+          <div className="space-y-3">
+            <h1 className="text-3xl font-semibold tracking-tighter lg:tracking-tight sm:text-5xl md:text-6xl/none">
+              Kamp Alanında Evinde Gibisin.
+            </h1>
+            <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              Türünün tek örneği evlerden otellere kadar her şey için Campsite
+              konforuyla rezervasyon yapın. Sahile yakın, dağlarda ve şehrin
+              kalbinde konaklamalar bulun.
+            </p>
+          </div>
+          <div className="mx-auto aspect-video rounded-xl overflow-hidden object-cover object-center">
+            <Image
+              alt="Hero"
+              src="/img5.webp"
+              style={{
+                aspectRatio: "700/400",
+                objectFit: "cover",
+              }}
+              width="700"
+              height="500"
+            />
           </div>
         </div>
-      </div>
-      <header className="flex flex-col h-auto w-full  shrink-0">
-        <div className="flex-1 flex items-center justify-between px-4 md:px-6">
-          <Link
-            className="flex items-center gap-2 text-lg font-semibold"
-            href="#"
-          >
-            <TentIcon className="w-6 h-6" />
-            <span className="sr-only">Campsite</span>
-          </Link>
-          <nav className="hidden md:flex md:gap-6 lg:gap-8">
-            <Link
-              className="flex items-center gap-1 text-sm font-medium [&:hover]>svg:
-            :rotate-[-15deg]:scale-110 transition-all"
-              href="#"
-            >
-              Home
-              <ChevronRightIcon className="w-3 h-3 ml-1.5" />
-            </Link>
-            <Link
-              className="flex items-center gap-1 text-sm font-medium [&:hover]>svg:
-            :rotate-[-15deg]:scale-110 transition-all"
-              href="#"
-            >
-              Campsites
-            </Link>
-            <Link
-              className="flex items-center gap-1 text-sm font-medium [&:hover]>svg:
-            :rotate-[-15deg]:scale-110 transition-all"
-              href="#"
-            >
-              Activities
-            </Link>
-            <Link
-              className="flex items-center gap-1 text-sm font-medium [&:hover]>svg:
-            :rotate-[-15deg]:scale-110 transition-all"
-              href="#"
-            >
-              Nearby
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4 md:gap-8">
-            <div className="flex items-center gap-3">
-              <div className="input-wrapper">
-                <Button
-                  className="shadow-none icon"
-                  size="icon"
-                  variant="outline"
-                >
-                  <SearchIcon className="w-4 h-4" />
-                  <span className="sr-only">Search</span>
-                </Button>
-                <input
-                  type="text"
-                  name="text"
-                  className="input"
-                  placeholder="search.."
+      </section>
+      <section className="w-full py-12 md:py-24 lg:py-24 border-t">
+        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+          <div className="space-y-3">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Öne çıkan yerler
+            </h2>
+            <p className="mx-auto max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              Campsite tarafından özenle seçilmiş ve küratörlüğü yapılmış,
+              konaklamak için muhteşem yerler.
+            </p>
+          </div>
+          <div className="w-[1300px] relative">
+            <Slider {...settings} className="slider-container">
+              <div className="slide-item selection:none">
+                <Image
+                  alt="Image"
+                  className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+                  height="200"
+                  src="/img1.webp"
+                  width="400"
                 />
               </div>
-              <Button className="shadow-none" size="icon" variant="outline">
-                <HeartIcon className="w-4 h-4" />
-                <span className="sr-only">Favorites</span>
-              </Button>
-            </div>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  className="border-2 border-gray-200 rounded-full shadow-none dark:border-gray-800"
-                  size="icon"
-                  variant="outline"
-                >
-                  <Avatar className="w-6 h-6">
-                    <AvatarImage alt="Avatar" src="/avatar.jpg" />
-                  </Avatar>
-                  <span className="sr-only">Toggle user menu</span>
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="mt-1 w-48">
-                <div className="flex flex-col gap-2 p-2">
-                  <Link
-                    className="flex items-center gap-2 text-sm font-medium"
-                    href="#"
-                  >
-                    <UserIcon className="w-4 h-4" />
-                    Profile
-                  </Link>
-                  <Link
-                    className="flex items-center gap-2 text-sm font-medium"
-                    href="#"
-                  >
-                    <SettingsIcon className="w-4 h-4" />
-                    Settings
-                  </Link>
-                  <Link
-                    className="flex items-center gap-2 text-sm font-medium"
-                    href="#"
-                  >
-                    <LogOutIcon className="w-4 h-4" />
-                    Log out
-                  </Link>
-                </div>
-              </PopoverContent>
-            </Popover>
+              <div className="slide-item">
+                <Image
+                  alt="Image"
+                  className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+                  height="200"
+                  src="/img2.webp"
+                  width="400"
+                />
+              </div>
+              <div className="slide-item">
+                <Image
+                  alt="Image"
+                  className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+                  height="200"
+                  src="/img3.webp"
+                  width="400"
+                />
+              </div>
+              <div className="slide-item">
+                <Image
+                  alt="Image"
+                  className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+                  height="200"
+                  src="/img4.webp"
+                  width="400"
+                />
+              </div>
+            </Slider>
           </div>
         </div>
-      </header>
-      <main className="flex-1">
-        <section className="w-full pt-6 md:pt-12 lg:py-24">
-          <div className="container grid items-center gap-4 px-4 sm:px-6 md:gap-10 lg:grid-cols-2 lg:px-10">
-            <div className="space-y-3">
-              <h1 className="text-3xl font-semibold tracking-tighter lg:tracking-tight sm:text-5xl md:text-6xl/none">
-                You're at home on Airbnb
-              </h1>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Book everything from one-of-a-kind homes to hotels with the
-                comfort of Airbnb. Find stays near the beach, in the mountains,
-                and in the heart of the city.
-              </p>
-            </div>
-            <div className="mx-auto aspect-video rounded-xl overflow-hidden object-cover object-center">
-              <Image
-                alt="Hero"
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "700/400",
-                  objectFit: "cover",
-                }}
-                width="700"
-                height="500"
-              />
-            </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 border-t">
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-            <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Featured destinations
-              </h2>
-              <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Stunning places to stay, handpicked and curated by Airbnb.
-              </p>
-            </div>
-            <div className="grid w-full grid-cols-2 lg:grid-cols-4 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
-              <img
-                alt="Image"
-                className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-                height="200"
-                src="/placeholder.svg"
-                width="300"
-              />
-              <img
-                alt="Image"
-                className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-                height="200"
-                src="/placeholder.svg"
-                width="300"
-              />
-              <img
-                alt="Image"
-                className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-                height="200"
-                src="/placeholder.svg"
-                width="300"
-              />
-              <img
-                alt="Image"
-                className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-                height="200"
-                src="/placeholder.svg"
-                width="300"
-              />
-            </div>
-          </div>
-        </section>
-        <section className="w-full container py-12 md:py-24 lg:py-16 border-t">
-          <Link href={"/campsite"} className="flex justify-end my-4">
-            <Button
-              className="rounded-full gap-1 p-3 border"
-              variant="secondary"
-            >
-              <ChevronRightIcon className="w-5 h-5" />
-              <span>All Campsite</span>
-            </Button>
-          </Link>
-          <div className=" grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4">
-            <Card className="overflow-visible">
-              <Link href="/campsite/1">
-                <div className="aspect-card overflow-hidden rounded-t-lg">
-                  <img
-                    alt="Image"
-                    className="aspect-card object-cover"
-                    height={300}
-                    src="/placeholder.svg"
-                    width={400}
-                  />
-                </div>
-                <CardHeader className="p-4 flex flex-col gap-2">
-                  <CardTitle className="text-xl font-semibold demo">
-                    Campsites in Santa Cruz
-                  </CardTitle>
-                  <CardDescription className="text-sm">
-                    Perfect for nature lovers. Surrounded by trees, with hiking
-                    trails nearby.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-4 p-4">
-                  <div className="flex items-center gap-2">
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4" />
-                    <span className="text-xs ml-auto">5 reviews</span>
-                  </div>
-                  <div className="text-2xl font-semibold tracking-tighter">
-                    $120
-                    <span className="text-sm font-normal">/ night</span>
-                  </div>
-                </CardContent>
-              </Link>
-            </Card>
-            <Card className="overflow-visible">
-              <Link href="/campsite/2">
-                <div className="aspect-card overflow-hidden rounded-t-lg">
-                  <img
-                    alt="Image"
-                    className="aspect-card object-cover"
-                    height={300}
-                    src="/placeholder.svg"
-                    width={400}
-                  />
-                </div>
-                <CardHeader className="p-4 flex flex-col gap-2">
-                  <CardTitle className="text-xl font-semibold">
-                    Beachfront Paradise
-                  </CardTitle>
-                  <CardDescription className="text-sm">
-                    Wake up to stunning ocean views. This beautiful villa is
-                    steps away from the beach.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-4 p-4">
-                  <div className="flex items-center gap-2">
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <span className="text-xs ml-auto">10 reviews</span>
-                  </div>
-                  <div className="text-2xl font-semibold tracking-tighter">
-                    $350
-                    <span className="text-sm font-normal">/ night</span>
-                  </div>
-                </CardContent>
-              </Link>
-            </Card>
-            <Card className="overflow-visible">
-              <Link href="/campsite/3">
-                <div className="aspect-card overflow-hidden rounded-t-lg">
-                  <img
-                    alt="Image"
-                    className="aspect-card object-cover"
-                    height={300}
-                    src="/placeholder.svg"
-                    width={400}
-                  />
-                </div>
-                <CardHeader className="p-4 flex flex-col gap-2">
-                  <CardTitle className="text-xl font-semibold">
-                    Mountain View Retreat
-                  </CardTitle>
-                  <CardDescription className="text-sm">
-                    Peaceful and serene. This rental offers breathtaking views
-                    of the mountains.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-4 p-4">
-                  <div className="flex items-center gap-2">
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <span className="text-xs ml-auto">8 reviews</span>
-                  </div>
-                  <div className="text-2xl font-semibold tracking-tighter">
-                    $300
-                    <span className="text-sm font-normal">/ night</span>
-                  </div>
-                </CardContent>
-              </Link>
-            </Card>
-            <Card className="overflow-visible">
-              <Link href="/campsite/4">
-                <div className="aspect-card overflow-hidden rounded-t-lg">
-                  <img
-                    alt="Image"
-                    className="aspect-card object-cover"
-                    height={300}
-                    src="/placeholder.svg"
-                    width={400}
-                  />
-                </div>
-                <CardHeader className="p-4 flex flex-col gap-2">
-                  <CardTitle className="text-xl font-semibold">
-                    Modern City Apartment
-                  </CardTitle>
-                  <CardDescription className="text-sm">
-                    Located in the heart of the city. Stylish and comfortable
-                    with all the amenities.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-4 p-4">
-                  <div className="flex items-center gap-2">
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <StarIcon className="w-4 h-4 fill-primary" />
-                    <span className="text-xs ml-auto">12 reviews</span>
-                  </div>
-                  <div className="text-2xl font-semibold tracking-tighter">
-                    $250
-                    <span className="text-sm font-normal">/ night</span>
-                  </div>
-                </CardContent>
-              </Link>
-            </Card>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 border-t">
-          <div className="container flex flex-col items-center justify-center space-y-4 text-center md:space-y-10">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Your journey starts with a single step
-              </h2>
-              <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Let's find your home. Enter your destination and dates to get
-                started.
-              </p>
-            </div>
-            <div className="mx-auto w-full max-w-sm space-y-2">
-              <form className="flex space-x-2">
-                <Input
-                  className="max-w-lg flex-1"
-                  placeholder="Enter your email"
-                  type="email"
+      </section>
+      <section className="w-full container py-12 md:py-24 lg:py-16 border-t">
+        <Link href={"/campsite"} className="flex justify-end my-4">
+          <Button className="rounded-full gap-1 p-3 border bg-gradient-to-r from-orange-500 to-orange-800 text-white">
+            <ChevronRightIcon className="w-5 h-5" />
+            <span>All Campsite</span>
+          </Button>
+        </Link>
+        <div className=" grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4">
+          <Card className="overflow-visible">
+            <Link href="/campsite/1">
+              <div className="aspect-card overflow-hidden rounded-t-lg">
+                <img
+                  alt="Image"
+                  className="aspect-card object-cover"
+                  height={300}
+                  src="/img1.webp"
+                  width={400}
                 />
-                <Button type="submit">Sign Up</Button>
-              </form>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
-                Sign up to get notified when we launch.
-                <Link className="underline underline-offset-2" href="#">
-                  Terms & Conditions
-                </Link>
-              </p>
-            </div>
+              </div>
+              <CardHeader className="p-4 flex flex-col gap-2">
+                <CardTitle className="text-xl font-semibold demo">
+                  Campsites in Santa Cruz
+                </CardTitle>
+                <CardDescription className="text-sm">
+                  Perfect for nature lovers. Surrounded by trees, with hiking
+                  trails nearby.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-4 p-4">
+                <div className="flex items-center gap-2">
+                  <StarIcon className="w-4 h-4 !fill-yellow-400" />
+                  <StarIcon className="w-4 h-4 fill-yellow-400" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4" />
+                  <span className="text-xs ml-auto">5 reviews</span>
+                </div>
+                <div className="text-2xl font-semibold tracking-tighter">
+                  $120
+                  <span className="text-sm font-normal">/ night</span>
+                </div>
+              </CardContent>
+            </Link>
+          </Card>
+          <Card className="overflow-visible">
+            <Link href="/campsite/2">
+              <div className="aspect-card overflow-hidden rounded-t-lg">
+                <img
+                  alt="Image"
+                  className="aspect-card object-cover"
+                  height={300}
+                  src="/img4.webp"
+                  width={400}
+                />
+              </div>
+              <CardHeader className="p-4 flex flex-col gap-2">
+                <CardTitle className="text-xl font-semibold">
+                  Beachfront Paradise
+                </CardTitle>
+                <CardDescription className="text-sm">
+                  Wake up to stunning ocean views. This beautiful villa is steps
+                  away from the beach.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-4 p-4">
+                <div className="flex items-center gap-2">
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <span className="text-xs ml-auto">10 reviews</span>
+                </div>
+                <div className="text-2xl font-semibold tracking-tighter">
+                  $350
+                  <span className="text-sm font-normal">/ night</span>
+                </div>
+              </CardContent>
+            </Link>
+          </Card>
+          <Card className="overflow-visible">
+            <Link href="/campsite/3">
+              <div className="aspect-card overflow-hidden rounded-t-lg">
+                <img
+                  alt="Image"
+                  className="aspect-card object-cover"
+                  height={300}
+                  src="/img3.webp"
+                  width={400}
+                />
+              </div>
+              <CardHeader className="p-4 flex flex-col gap-2">
+                <CardTitle className="text-xl font-semibold">
+                  Mountain View Retreat
+                </CardTitle>
+                <CardDescription className="text-sm">
+                  Peaceful and serene. This rental offers breathtaking views of
+                  the mountains.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-4 p-4">
+                <div className="flex items-center gap-2">
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <span className="text-xs ml-auto">8 reviews</span>
+                </div>
+                <div className="text-2xl font-semibold tracking-tighter">
+                  $300
+                  <span className="text-sm font-normal">/ night</span>
+                </div>
+              </CardContent>
+            </Link>
+          </Card>
+          <Card className="overflow-visible">
+            <Link href="/campsite/4">
+              <div className="aspect-card overflow-hidden rounded-t-lg">
+                <img
+                  alt="Image"
+                  className="aspect-card object-cover"
+                  height={300}
+                  src="/img2.webp"
+                  width={400}
+                />
+              </div>
+              <CardHeader className="p-4 flex flex-col gap-2">
+                <CardTitle className="text-xl font-semibold">
+                  Modern City Apartment
+                </CardTitle>
+                <CardDescription className="text-sm">
+                  Located in the heart of the city. Stylish and comfortable with
+                  all the amenities.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-4 p-4">
+                <div className="flex items-center gap-2">
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <StarIcon className="w-4 h-4 fill-primary" />
+                  <span className="text-xs ml-auto">12 reviews</span>
+                </div>
+                <div className="text-2xl font-semibold tracking-tighter">
+                  $250
+                  <span className="text-sm font-normal">/ night</span>
+                </div>
+              </CardContent>
+            </Link>
+          </Card>
+        </div>
+      </section>
+      <section className="w-full py-12 md:py-24 lg:py-32 border-t">
+        <div className="container flex flex-col items-center justify-center space-y-4 text-center md:space-y-10">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Yolculuğunuz tek bir adımla başlar
+            </h2>
+            <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              Hadi evinizi bulalım. Almak için varış noktanızı ve tarihleri
+              girin başladı.
+            </p>
           </div>
-        </section>
-      </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">
-          © 2024 Acme Inc. All rights reserved.
-        </p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Privacy
-          </Link>
-        </nav>
-      </footer>
+          <div className="mx-auto w-full max-w-sm space-y-2">
+            <form className="flex space-x-2">
+              <Input
+                className="max-w-lg flex-1"
+                placeholder="E-posta adresinizi girin"
+                type="email"
+              />
+              <Button type="submit">Kayıt Ol</Button>
+            </form>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              Başladığımızda haberdar olmak için kaydolun.
+              <Link className="underline underline-offset-2" href="#">
+                Şartlar & Koşullar
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
