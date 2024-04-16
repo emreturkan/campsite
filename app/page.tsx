@@ -82,10 +82,22 @@ export default function Component() {
           </nav>
           <div className="flex items-center gap-4 md:gap-8">
             <div className="flex items-center gap-3">
-              <Button className="shadow-none" size="icon" variant="outline">
-                <SearchIcon className="w-4 h-4" />
-                <span className="sr-only">Search</span>
-              </Button>
+              <div className="input-wrapper">
+                <Button
+                  className="shadow-none icon"
+                  size="icon"
+                  variant="outline"
+                >
+                  <SearchIcon className="w-4 h-4" />
+                  <span className="sr-only">Search</span>
+                </Button>
+                <input
+                  type="text"
+                  name="text"
+                  className="input"
+                  placeholder="search.."
+                />
+              </div>
               <Button className="shadow-none" size="icon" variant="outline">
                 <HeartIcon className="w-4 h-4" />
                 <span className="sr-only">Favorites</span>

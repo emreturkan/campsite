@@ -18,7 +18,7 @@ export default function Component() {
     <div className="container grid gap-8 py-24">
       <div className="flex items-center gap-8">
         <Link href={"/"}>
-          <Button className="rounded-full gap-1 p-3 border" variant="default">
+          <Button className="rounded-full  gap-1 p-3 border" variant="default">
             <ChevronLeftIcon className="w-5 h-5" />
             <span>Back</span>
           </Button>
