@@ -17,7 +17,7 @@ import Image from "next/image";
 
 export default function Component() {
   return (
-    <div className="max-w-3xl relative grid gap-8 mx-auto p-4 sm:py-8">
+    <div className="max-w-3xl relative grid gap-8 mx-auto p-4 sm:py-12">
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-4">
           <Link href={"/"}>

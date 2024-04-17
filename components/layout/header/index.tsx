@@ -59,7 +59,7 @@ const Header = (props: Props) => {
               <div className="flex flex-col gap-2 p-2">
                 <Link
                   className="flex items-center gap-2 text-sm font-medium"
-                  href="#"
+                  href="/others/account"
                 >
                   <UserIcon className="w-4 h-4" />
                   Profile

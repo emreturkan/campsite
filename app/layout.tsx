@@ -27,7 +27,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="container grid gap-2">
+            <div className="container grid gap-2 ">
               <TopBar />
               <Header />
               <main>{children}</main>
