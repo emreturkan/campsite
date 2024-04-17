@@ -13,7 +13,7 @@ const TopBar = (props: Props) => {
             Kamp alanında açık havanın tadını çıkarın.
           </span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className=" items-center gap-2 hidden lg:flex">
           <Link
             className="text-gray-500 dark:text-gray-400 hover:underline text-xs hover:text-gray-900"
             href="#"

@@ -4,6 +4,7 @@ import { Button } from "../../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover";
 import { Avatar, AvatarImage } from "../../ui/avatar";
 import Menu from "./menu";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 type Props = {};
 
@@ -19,8 +20,8 @@ const Header = (props: Props) => {
           <span className="sr-only">Campsite</span>
         </Link>
         <Menu />
-        <div className="flex items-center gap-4 md:gap-8">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center lg:gap-4 md:gap-8">
+          <div className="flex items-center gap-1 lg:gap-3">
             <div className="input-wrapper">
               <Button
                 className="shadow-none icon"
@@ -37,7 +38,19 @@ const Header = (props: Props) => {
                 placeholder="Ara.."
               />
             </div>
-            <Button className="shadow-none" size="icon" variant="outline">
+            <Button
+              className="shadow-none flex lg:hidden"
+              size="icon"
+              variant="outline"
+            >
+              <HamburgerMenuIcon className="w-4 h-4" />
+              <span className="sr-only">Menu</span>
+            </Button>
+            <Button
+              className="shadow-none hidden lg:flex"
+              size="icon"
+              variant="outline"
+            >
               <HeartIcon className="w-4 h-4" />
               <span className="sr-only">Favorites</span>
             </Button>

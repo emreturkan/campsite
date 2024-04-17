@@ -22,8 +22,16 @@ export default function Component() {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-
     slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   };
   return (
     <div>
@@ -64,7 +72,7 @@ export default function Component() {
               konaklamak için muhteşem yerler.
             </p>
           </div>
-          <div className="w-[1300px] relative">
+          <div className="w-80  lg:w-[1300px] relative">
             <Slider {...settings} className="slider-container">
               <div className="slide-item selection:none">
                 <Image

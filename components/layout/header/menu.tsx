@@ -55,7 +55,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 const Menu = (props: Props) => {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Ana Sayfa</NavigationMenuTrigger>
