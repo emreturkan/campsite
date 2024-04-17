@@ -12,27 +12,17 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Link1Icon, Link2Icon, LinkBreak1Icon } from "@radix-ui/react-icons";
+import { Link2Icon } from "@radix-ui/react-icons";
 import Image from "next/image";
 
 export default function Component() {
   return (
     <div className="max-w-3xl relative grid gap-8 mx-auto p-4 sm:py-12">
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-4">
-          <Link href={"/"}>
-            <Button
-              className="rounded-full  gap-1 p-3 border"
-              variant="default"
-            >
-              <ChevronLeftIcon className="w-5 h-5" />
-              <span>Geri</span>
-            </Button>
-          </Link>
-          <h1 className="text-3xl font-bold tracking-tighter">
-            Kamp Ekipmanları Kontrol Listesi
-          </h1>
-        </div>
+        <h1 className="text-3xl font-bold tracking-tighter">
+          Kamp Ekipmanları Kontrol Listesi
+        </h1>
+
         <p className="text-gray-500 dark:text-gray-400">
           Bu kapsamlı ekipman kontrol listesi ile bir sonraki kamp maceranıza
           hazırlıklı olun. Sahip olduğunuz eşyaları işaretleyin ve ihtiyacınız
@@ -75,8 +65,7 @@ export default function Component() {
                         />
                         <div className="grid gap-2">
                           <h3 className="font-semibold">
-                            Fiyat:{" "}
-                            <span className="text-orange-400">$ 1.500</span>
+                            Fiyat: <span className="text-primary">$ 1.500</span>
                           </h3>
                           <p className="text-sm text-gray-500 dark:text-gray-400">
                             Bird çadırlarının basit yapısı denenmiş ve test

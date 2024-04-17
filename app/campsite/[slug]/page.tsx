@@ -21,27 +21,17 @@ import {
   SelectContent,
   Select,
 } from "@/components/ui/select";
-import {
-  DialogTrigger,
-  DialogTitle,
-  DialogDescription,
-  DialogHeader,
-  DialogFooter,
-  DialogContent,
-  Dialog,
-} from "@/components/ui/dialog";
-import { RadioGroupItem, RadioGroup } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
 import Image from "next/image";
+import { StarFilledIcon } from "@radix-ui/react-icons";
 
 export default function Component() {
   return (
-    <div className="container mx-auto p-4 lg:px-6 sm:py-8 md:py-10">
+    <div className=" mx-auto p-4 lg:px-10 sm:py-8 md:py-10">
       <section className="hidden sm:flex flex-col gap-4 sm:flex-row sm:items-center pb-4 sm:pb-8">
         <h1 className="text-xl lg:text-3xl font-semibold tracking-tight">
-          Riverside Glamping: Secluded Luxury Tents by the River
+          Tranquil Lakeside Campsite in the Heart of the Forest
         </h1>
-        <nav className="flex items-center justify-center gap-1 sm:ml-auto">
+        <nav className="flex items-center gap-1 sm:ml-auto">
           <Button
             asChild
             className="rounded-md gap-1 underline underline-offset-2"
@@ -50,7 +40,7 @@ export default function Component() {
           >
             <a href="#">
               <ShareIcon className="w-4 h-4" />
-              Share
+              Paylaş
             </a>
           </Button>
           <Button
@@ -61,37 +51,86 @@ export default function Component() {
           >
             <a href="#">
               <HeartIcon className="w-4 h-4" />
-              Save
+              Favorilere Ekle
             </a>
           </Button>
         </nav>
       </section>
-      <section className="py-8 grid md:grid-cols-2 lg:grid-cols-[1fr_400px] gap-8 sm:gap-12 md:gap-16 items-start">
-        <div className="grid gap-8 row-start-2 md:row-start-auto">
-          <div className="hidden md:flex flex-col gap-1">
-            <h2 className="text-2xl font-semibold">
-              Riverside Campsite, California, United States
-            </h2>
-            <p className="text-gray-500 dark:text-gray-400">
-              4 guests · 1 tent · 2 beds · 1 bath · Parking · Riverside view
-            </p>
-          </div>
+      <section className="grid grid-cols-2 gap-4">
+        <Image
+          alt="Hero"
+          src="/img1.webp"
+          style={{
+            aspectRatio: "700/410",
+            objectFit: "cover",
+          }}
+          className="rounded-lg"
+          width="700"
+          height="500"
+        />
+        <div className="grid grid-cols-2 gap-4">
           <Image
             alt="Hero"
-            src="/placeholder.svg"
+            src="/img2.webp"
+            style={{
+              aspectRatio: "700/400",
+              objectFit: "cover",
+            }}
+            className="rounded-lg"
+            width="300"
+            height="400"
+          />
+          <Image
+            alt="Hero"
+            src="/img3.webp"
             style={{
               aspectRatio: "700/400",
               objectFit: "cover",
             }}
             className="rounded-lg"
             width="700"
-            height="500"
+            height="400"
           />
+          <Image
+            alt="Hero"
+            src="/img4.webp"
+            style={{
+              aspectRatio: "700/400",
+              objectFit: "cover",
+            }}
+            className="rounded-lg"
+            width="700"
+            height="400"
+          />
+          <Image
+            alt="Hero"
+            src="/img5.webp"
+            style={{
+              aspectRatio: "700/400",
+              objectFit: "cover",
+            }}
+            className="rounded-lg"
+            width="700"
+            height="400"
+          />
+        </div>
+      </section>
+      <section className="py-8 grid md:grid-cols-2 lg:grid-cols-[1fr_400px] gap-8 sm:gap-12 md:gap-16 items-start">
+        <div className="grid gap-8 row-start-2 md:row-start-auto">
+          <div className="hidden md:flex flex-col gap-1">
+            <h2 className="text-2xl font-semibold">
+              Ormanın Kalbindeki Kamp Alanı, Birleşik Devletler
+            </h2>
+            <p className="text-gray-500 dark:text-gray-400">
+              4 misafirler · 1 çadır · Kamp Ateşi · Muhteşem manzaralar
+            </p>
+          </div>
           <Card>
             <CardContent className="p-4 sm:p-6 flex items-center gap-6 relative">
               <AwardIcon className="w-10 h-10" />
               <div className="flex-1 font-semibold max-w-[16rem] hidden sm:flex md:hidden lg:flex">
-                One of the most loved campsites on Airbnb, according to campers.
+                Kampçılara göre Campsite'da en çok sevilen kamp alanlarından
+                biri.
               </div>
               <div className="flex items-center gap-6 ml-auto">
                 <div className="flex flex-col gap-1 text-center">
@@ -99,11 +138,11 @@ export default function Component() {
                     4.95
                   </div>
                   <div className="flex items-center gap-1">
-                    <StarIcon className="w-2.5 h-2.5 fill-primary" />
-                    <StarIcon className="w-2.5 h-2.5 fill-primary" />
-                    <StarIcon className="w-2.5 h-2.5 fill-primary" />
-                    <StarIcon className="w-2.5 h-2.5 fill-primary" />
-                    <StarIcon className="w-2.5 h-2.5" />
+                    <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                    <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                    <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                    <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                    <StarFilledIcon className="w-2.5 h-2.5" />
                   </div>
                 </div>
                 <Separator className="h-9" orientation="vertical" />
@@ -111,11 +150,13 @@ export default function Component() {
                   <div className="text-2xl font-semibold tracking-tighter">
                     302
                   </div>
-                  <div className="text-xs underline font-semibold">Reviews</div>
+                  <div className="text-xs underline font-semibold">
+                    İncelemeler
+                  </div>
                 </div>
               </div>
               <Link className="absolute inset-0" href="#">
-                <span className="sr-only">View reviews</span>
+                <span className="sr-only">İncelemeleri görüntüle</span>
               </Link>
             </CardContent>
           </Card>
@@ -127,9 +168,11 @@ export default function Component() {
               </Avatar>
             </div>
             <div className="grid gap-0.5">
-              <div className="font-semibold">Hosted by Catherine</div>
+              <div className="font-semibold">
+                Adventure Co tarafından düzenlendi.
+              </div>
               <div className="text-gray-500 text-sm dark:text-gray-400">
-                Joined in 2010 · Superhost
+                2021'de katıldı - Süper Ev Sahibi
               </div>
             </div>
           </div>
@@ -139,11 +182,9 @@ export default function Component() {
               <CalendarCheckIcon className="w-7 h-7" />
             </div>
             <div className="grid gap-0.5">
-              <div className="font-semibold">
-                Free cancellation for 48 hours
-              </div>
+              <div className="font-semibold">48 saat için ücretsiz iptal</div>
               <div className="text-gray-500 text-sm dark:text-gray-400">
-                Get a full refund if you change your mind.
+                Fikrinizi değiştirirseniz paranızın tamamını geri alın.
               </div>
             </div>
           </div>
@@ -152,9 +193,9 @@ export default function Component() {
               <MedalIcon className="w-7 h-7" />
             </div>
             <div className="grid gap-0.5">
-              <div className="font-semibold">Catherine is a Superhost</div>
+              <div className="font-semibold">Melek bir Süper Ev Sahibi</div>
               <div className="text-gray-500 text-sm dark:text-gray-400">
-                Superhosts are experienced, highly rated hosts.
+                Süper ev sahipleri deneyimli, yüksek puanlı ev sahipleridir.
               </div>
             </div>
           </div>
@@ -163,94 +204,83 @@ export default function Component() {
               <MapPinIcon className="w-7 h-7" />
             </div>
             <div className="grid gap-0.5">
-              <div className="font-semibold">Great location</div>
+              <div className="font-semibold">Harika konum</div>
               <div className="text-gray-500 text-sm dark:text-gray-400">
-                100% of recent guests gave the location a 5-star rating.
+                Son konukların %100'ü konumu 5 yıldızlı olarak
+                değerlendirmiştir.
               </div>
             </div>
           </div>
           <Separator />
           <div className="prose">
             <p>
-              Welcome to our riverside glamping site, where you can experience
-              the beauty of nature without sacrificing comfort. Our luxury tents
-              are nestled by the river, offering a tranquil and picturesque
-              setting for your camping adventure.
+              Göl kenarındaki sakin kamp alanımıza hoş geldiniz. Orman. İster
+              hevesli bir kampçı olun, isterseniz de Eşsiz bir doğa deneyimi
+              için kamp alanımız mükemmel bir inziva alanı sunuyor. Ormanın
+              huzurlu sesleri ve muhteşem manzaraları göl sakin ve pitoresk bir
+              ortam yaratır.
             </p>
             <Collapsible>
               <CollapsibleTrigger className="font-semibold flex items-center gap-1 [&[data-state=open]>svg]:-rotate-90">
-                Show more
+                Daha fazla göster
                 <ChevronRightIcon className="w-4 h-4 translate-y-px transition-all" />
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <p>
-                  Our glamping site is equipped with everything you need for a
-                  relaxing and enjoyable stay. Each tent features comfortable
-                  beds, cozy seating, and elegant decor to create a welcoming
-                  atmosphere. You'll also have access to shared amenities such
-                  as clean and modern bathrooms, a communal dining area, and an
-                  outdoor fire pit where you can gather with fellow campers to
-                  share stories and make s'mores.
-                </p>
-                <p>
-                  Whether you're an avid camper or trying glamping for the first
-                  time, our riverside site offers the perfect blend of luxury
-                  and nature. You can spend your days exploring the surrounding
-                  wilderness, fishing in the river, or simply relaxing in the
-                  peaceful ambiance of our campsite. At night, you'll be treated
-                  to stunning views of the starry sky, making for a magical and
-                  memorable experience.
+                  Kamp alanımız bir kamp için ihtiyacınız olan her şeyle
+                  donatılmıştır. konforlu ve keyifli bir konaklama. Erişiminiz
+                  olacak arkadaşlarınızla bir araya gelebileceğiniz özel kamp
+                  ateşi alanı altında marshmallow kızartmak ve hikayeler
+                  paylaşmak için Yıldızlar. Bölge yıldızları izlemek için
+                  mükemmeldir ve açık havalarda Geceleri Samanyolu'nun
+                  gökyüzünde uzandığını görebilirsiniz.
                 </p>
               </CollapsibleContent>
             </Collapsible>
           </div>
           <Separator />
           <div className="grid gap-8">
-            <h3 className="text-xl font-semibold">What this place offers</h3>
+            <h3 className="text-xl font-semibold">Burası neler sunuyor</h3>
             <ul className="grid lg:grid-cols-2 gap-6">
               <li className="flex gap-4">
-                <FlameIcon className="w-6 h-6" />
-                Campfire
+                <MountainSnowIcon className="w-6 h-6" />
+                Göl Kıyısı
               </li>
               <li className="flex gap-4">
-                <BackpackIcon className="w-6 h-6" />
-                Guided hikes
+                <WavesIcon className="w-6 h-6" />
+                Kamp Ateşi
               </li>
               <li className="flex gap-4">
-                <FishIcon className="w-6 h-6" />
-                Fishing
+                <ChefHatIcon className="w-6 h-6" />
+                Huzur ve sessizlik
               </li>
               <li className="flex gap-4">
                 <WifiIcon className="w-6 h-6" />
-                Wifi
+                Yaban hayatı gözlemciliği
               </li>
               <li className="flex gap-4">
-                <EggIcon className="w-6 h-6" />
-                Breakfast included
+                <CarIcon className="w-6 h-6" />
+                Yürüyüş parkurları
+              </li>
+              <li className="flex gap-4">
+                <CameraIcon className="w-6 h-6" />
+                Kuş Gözlemciliği
               </li>
               <li className="flex gap-4">
                 <AccessibilityIcon className="w-6 h-6" />
-                Wheelchair accessible
-              </li>
-              <li className="flex gap-4">
-                <DogIcon className="w-6 h-6" />
-                Pet-friendly
-              </li>
-              <li className="flex gap-4">
-                <BathIcon className="w-6 h-6" />
-                Spa services
+                Yıldız Gözlemciliği
               </li>
             </ul>
             <Button className="justify-self-start" variant="outline">
-              Show all amenities
+              Tüm olanakları göster
             </Button>
           </div>
           <Separator />
           <div className="grid gap-8">
             <div className="grid gap-0.5">
-              <h3 className="text-xl font-semibold">Find a date</h3>
+              <h3 className="text-xl font-semibold">Bir tarih bulun</h3>
               <div className="text-gray-500 dark:text-gray-400">
-                Pick your travel dates for availability.
+                Müsaitlik durumu için seyahat tarihlerinizi seçin.
               </div>
             </div>
             <div className="sm:border p-0 sm:p-4 rounded-lg justify-self-start">
@@ -266,18 +296,18 @@ export default function Component() {
         <div className="grid gap-4 row-start-1 md:row-start-auto">
           <div className="flex sm:hidden flex-col gap-1">
             <h2 className="sm:text-2xl font-semibold">
-              Riverside Campsite, California, United States
+              Ormanın Kalbindeki Kamp Alanı, Birleşik Devletler
             </h2>
             <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400">
-              4 guests · 1 tent · 2 beds · 1 bath · Parking · Riverside view
+              4 misafirler · 1 çadır · Kamp Ateşi · Muhteşem manzaralar
             </p>
           </div>
           <Card>
             <CardHeader>
               <CardTitle>
-                $200
+                ₺200
                 <span className="text-sm text-gray-500 font-normal dark:text-gray-400">
-                  / night
+                  / gece
                 </span>
               </CardTitle>
             </CardHeader>
@@ -292,7 +322,7 @@ export default function Component() {
                           variant="outline"
                         >
                           <span className="font-semibold uppercase text-[0.65rem]">
-                            Check in
+                            Giriş
                           </span>
                           <span className="font-normal">4/2/2024</span>
                         </Button>
@@ -308,7 +338,7 @@ export default function Component() {
                           variant="outline"
                         >
                           <span className="font-semibold uppercase text-[0.65rem]">
-                            Check out
+                            Çıkış
                           </span>
                           <span className="font-normal">10/2/2024</span>
                         </Button>
@@ -324,139 +354,60 @@ export default function Component() {
                         placeholder={
                           <div className="flex flex-col items-start">
                             <span className="font-semibold uppercase text-[0.65rem]">
-                              Guests
+                              Misafirler
                             </span>
-                            <span className="font-normal">2 adults</span>
+                            <span className="font-normal">2 yetişkin</span>
                           </div>
                         }
                       />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="1">1 adult</SelectItem>
-                      <SelectItem value="2">2 adults</SelectItem>
-                      <SelectItem value="3">2 adults + 1 child</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="1">1 yetişkin</SelectItem>
+                      <SelectItem value="2">2 yetişkin</SelectItem>
+                      <SelectItem value="3">2 yetişkin + 1 çocuk</SelectItem>
+                      <SelectItem value="other">Diğer</SelectItem>
                     </SelectContent>
                   </Select>
                   <div>
                     <Button className="w-full h-12" size="lg">
-                      Reserve
+                      Rezerve edin
                     </Button>
                   </div>
                   <div className="text-sm text-gray-500 text-center dark:text-gray-400">
-                    You won't be charged yet
+                    Henüz ücretlendirilmeyeceksiniz
                   </div>
                 </div>
               </form>
               <div className="grid gap-4">
                 <div className="flex justify-between items-center">
                   <div className="text-gray-500 dark:text-gray-400">
-                    $200 x 3 nights
+                    ₺200 x 3 gece
                   </div>
-                  <div>$600</div>
+                  <div>₺600</div>
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="text-gray-500 dark:text-gray-400">
-                    Service fee
-                    <span className="text-xs">
-                      (included in the total price)
-                    </span>
+                    Hizmet bedeli
+                    <span className="text-xs">( toplam fiyata dahildir )</span>
                   </div>
-                  <div>$100</div>
+                  <div>₺100</div>
+                </div>
+              </div>
+              <Separator />
+              <div className="flex items-center gap-4">
+                <Avatar className="w-8 h-8 border">
+                  <AvatarImage alt="@username" src="/placeholder-user.jpg" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div className="grid gap-0.5">
+                  <div className="font-semibold">Para iadesi politikası</div>
+                  <div className="text-gray-500 text-sm dark:text-gray-400">
+                    48 saat için ücretsiz iptal
+                  </div>
                 </div>
               </div>
             </CardContent>
           </Card>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button
-                className="gap-2 underline text-gray-500 hover:text-inherit dark:text-gray-400"
-                variant="link"
-              >
-                <FlagIcon className="w-4 h-4" />
-                Report this listing
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Report this listing</DialogTitle>
-                <DialogDescription>
-                  This won’t be shared with the Host.
-                </DialogDescription>
-                <div className="py-6">
-                  <form>
-                    <RadioGroup>
-                      <Label
-                        className="text-base font-normal flex items-center w-full cursor-pointer"
-                        htmlFor="inaccurate"
-                      >
-                        It’s inaccurate or incorrect
-                        <RadioGroupItem
-                          className="ml-auto"
-                          id="inaccurate"
-                          value="inaccurate"
-                        />
-                      </Label>
-                      <Separator className="my-4" />
-                      <Label
-                        className="text-base font-normal flex items-center w-full cursor-pointer"
-                        htmlFor="not_a_place"
-                      >
-                        It’s not a place to stay
-                        <RadioGroupItem
-                          className="ml-auto"
-                          id="not_a_place"
-                          value="not_a_place"
-                        />
-                      </Label>
-                      <Separator className="my-4" />
-                      <Label
-                        className="text-base font-normal flex items-center w-full cursor-pointer"
-                        htmlFor="scam"
-                      >
-                        It’s a scam
-                        <RadioGroupItem
-                          className="ml-auto"
-                          id="scam"
-                          value="scam"
-                        />
-                      </Label>
-                      <Separator className="my-4" />
-                      <Label
-                        className="text-base font-normal flex items-center w-full cursor-pointer"
-                        htmlFor="offensive"
-                      >
-                        It’s offensive
-                        <RadioGroupItem
-                          className="ml-auto"
-                          id="offensive"
-                          value="offensive"
-                        />
-                      </Label>
-                      <Separator className="my-4" />
-                      <Label
-                        className="text-base font-normal flex items-center w-full cursor-pointer"
-                        htmlFor="something_else"
-                      >
-                        It’s something else
-                        <RadioGroupItem
-                          className="ml-auto"
-                          id="something_else"
-                          value="something_else"
-                        />
-                      </Label>
-                    </RadioGroup>
-                  </form>
-                </div>
-              </DialogHeader>
-              <DialogFooter>
-                <div>
-                  <Button variant="ghost">Cancel</Button>
-                </div>
-                <Button>Report</Button>
-              </DialogFooter>
-            </DialogContent>
-          </Dialog>
         </div>
       </section>
       <Separator />
@@ -477,17 +428,17 @@ export default function Component() {
             </div>
             <div className="font-semibold flex items-center text-xs gap-2">
               <div className="flex items-center gap-px">
-                <StarIcon className="w-2.5 h-2.5 fill-primary" />
-                <StarIcon className="w-2.5 h-2.5 fill-primary" />
-                <StarIcon className="w-2.5 h-2.5 fill-primary" />
-                <StarIcon className="w-2.5 h-2.5 fill-primary" />
-                <StarIcon className="w-2.5 h-2.5" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5" />
               </div>
-              ·<span>1 week ago</span>
+              ·<span>1 hafta önce</span>
             </div>
             <div>
-              Catherine’s place was amazing! The views were incredible and the
-              house was very clean. We had a great time.
+              Melek'in yeri muhteşemdi! Manzara inanılmazdı ve ev çok temizdi.
+              Harika vakit geçirdik.
             </div>
           </article>
           <article className="grid gap-3">
@@ -504,10 +455,80 @@ export default function Component() {
               </div>
             </div>
             <div className="font-semibold flex items-center text-xs gap-2">
-              <div className="flex items-center gap-px" />
+              <div className="flex items-center gap-px">
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5" />
+              </div>
+              ·<span>1 hafta önce</span>
+            </div>
+            <div>
+              Biz harika bir zaman geçirdim ve kesinlikle tekrar kalacaktı!
+              Muhteşem manzaralar ve güzel bir ev.
+            </div>
+          </article>
+          <article className="grid gap-3">
+            <div className="flex items-center gap-4">
+              <Avatar className="w-11 h-11 border">
+                <AvatarImage alt="@username" src="/placeholder-user.jpg" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div className="grid">
+                <div className="font-semibold">Nicole</div>
+                <div className="text-gray-500 text-sm dark:text-gray-400">
+                  Nevada, California
+                </div>
+              </div>
+            </div>
+            <div className="font-semibold flex items-center text-xs gap-2">
+              <div className="flex items-center gap-px">
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5" />
+              </div>
+              ·<span>1 hafta önce</span>
+            </div>
+            <div>
+              Bu benim ikinci kez Catherine'in evinde kalışım ve ilk seferki
+              kadar muhteşemdi. Kesinlikle tekrar kalırım!
+            </div>
+          </article>
+          <article className="grid gap-3">
+            <div className="flex items-center gap-4">
+              <Avatar className="w-11 h-11 border">
+                <AvatarImage alt="@username" src="/placeholder-user.jpg" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div className="grid">
+                <div className="font-semibold">Miranda</div>
+                <div className="text-gray-500 text-sm dark:text-gray-400">
+                  Citrus Height, California
+                </div>
+              </div>
+            </div>
+            <div className="font-semibold flex items-center text-xs gap-2">
+              <div className="flex items-center gap-px">
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5 text-primary" />
+                <StarFilledIcon className="w-2.5 h-2.5" />
+                <StarFilledIcon className="w-2.5 h-2.5" />
+              </div>
+              ·<span>1 hafta önce</span>
+            </div>
+            <div className="">
+              Süper temiz, harika bir konum ve muhteşem manzaralar. Harika bir
+              gün geçirdik. zaman ve keşke daha uzun kalabilseydik!
             </div>
           </article>
         </div>
+        <Button className="justify-self-start" variant="outline">
+          Tüm incelemeleri göster
+        </Button>
       </section>
     </div>
   );
@@ -556,52 +577,6 @@ function AwardIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function BackpackIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
-      <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
-      <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
-      <path d="M8 10h8" />
-      <path d="M8 18h8" />
-    </svg>
-  );
-}
-
-function BathIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" />
-      <line x1="10" x2="8" y1="5" y2="7" />
-      <line x1="2" x2="22" y1="12" y2="12" />
-      <line x1="7" x2="7" y1="19" y2="21" />
-      <line x1="17" x2="17" y1="19" y2="21" />
-    </svg>
-  );
-}
-
 function CalendarCheckIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -625,6 +600,68 @@ function CalendarCheckIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function CameraIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+      <circle cx="12" cy="13" r="3" />
+    </svg>
+  );
+}
+
+function CarIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+      <circle cx="7" cy="17" r="2" />
+      <path d="M9 17h6" />
+      <circle cx="17" cy="17" r="2" />
+    </svg>
+  );
+}
+
+function ChefHatIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
+      <line x1="6" x2="18" y1="17" y2="17" />
+    </svg>
+  );
+}
+
 function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -640,112 +677,6 @@ function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeLinejoin="round"
     >
       <path d="m9 18 6-6-6-6" />
-    </svg>
-  );
-}
-
-function DogIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.96-1.45 2.344-2.5" />
-      <path d="M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5" />
-      <path d="M8 14v.5" />
-      <path d="M16 14v.5" />
-      <path d="M11.25 16.25h1.5L12 17l-.75-.75Z" />
-      <path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444c0-1.061-.162-2.2-.493-3.309m-9.243-6.082A8.801 8.801 0 0 1 12 5c.78 0 1.5.108 2.161.306" />
-    </svg>
-  );
-}
-
-function EggIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 22c6.23-.05 7.87-5.57 7.5-10-.36-4.34-3.95-9.96-7.5-10-3.55.04-7.14 5.66-7.5 10-.37 4.43 1.27 9.95 7.5 10z" />
-    </svg>
-  );
-}
-
-function FishIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z" />
-      <path d="M18 12v.5" />
-      <path d="M16 17.93a9.77 9.77 0 0 1 0-11.86" />
-      <path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33" />
-      <path d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4" />
-      <path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98" />
-    </svg>
-  );
-}
-
-function FlagIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
-      <line x1="4" x2="4" y1="22" y2="15" />
-    </svg>
-  );
-}
-
-function FlameIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
     </svg>
   );
 }
@@ -769,7 +700,7 @@ function HeartIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function MapPinIcon(props: React.SVGProps<SVGSVGElement>) {
+function MountainSnowIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -783,32 +714,8 @@ function MapPinIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
-
-function MedalIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15" />
-      <path d="M11 12 5.12 2.2" />
-      <path d="m13 12 5.88-9.8" />
-      <path d="M8 7h8" />
-      <circle cx="12" cy="17" r="5" />
-      <path d="M12 18v-2h-.5" />
+      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+      <path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19" />
     </svg>
   );
 }
@@ -853,6 +760,27 @@ function StarIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function WavesIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+      <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+      <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+    </svg>
+  );
+}
+
 function WifiIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -871,6 +799,50 @@ function WifiIcon(props: React.SVGProps<SVGSVGElement>) {
       <path d="M8.5 16.5a5 5 0 0 1 7 0" />
       <path d="M2 8.82a15 15 0 0 1 20 0" />
       <line x1="12" x2="12.01" y1="20" y2="20" />
+    </svg>
+  );
+}
+
+function MapPinIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function MedalIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15" />
+      <path d="M11 12 5.12 2.2" />
+      <path d="m13 12 5.88-9.8" />
+      <path d="M8 7h8" />
+      <circle cx="12" cy="17" r="5" />
+      <path d="M12 18v-2h-.5" />
     </svg>
   );
 }

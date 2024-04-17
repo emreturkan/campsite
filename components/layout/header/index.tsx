@@ -10,14 +10,14 @@ type Props = {};
 
 const Header = (props: Props) => {
   return (
-    <header className="w-full ">
+    <header className="w-full mt-6">
       <div className="flex-1 flex items-center justify-between px-4 md:px-6">
         <Link
           className="flex items-center gap-2 text-lg font-semibold"
           href="/"
         >
           <TentIcon className="w-6 h-6" />
-          <span className="sr-only">Campsite</span>
+          <span className="font-semibold text-lg">Campsite</span>
         </Link>
         <Menu />
         <div className="flex items-center lg:gap-4 md:gap-8">
@@ -47,18 +47,20 @@ const Header = (props: Props) => {
               <span className="sr-only">Menu</span>
             </Button>
             <Button
-              className="shadow-none hidden lg:flex"
+              className="shadow-none hidden lg:flex group"
               size="icon"
               variant="outline"
             >
-              <HeartIcon className="w-4 h-4" />
-              <span className="sr-only">Favorites</span>
+              <Link href={"/others/favorite"}>
+                <HeartIcon className="w-4 h-4 group-hover:fill-primary group-hover:text-primary" />
+                <span className="sr-only">Favorites</span>
+              </Link>
             </Button>
           </div>
           <Popover>
             <PopoverTrigger asChild>
               <Button
-                className="border-2 border-gray-200 rounded-full shadow-none dark:border-gray-800"
+                className="rounded-full shadow-none "
                 size="icon"
                 variant="outline"
               >

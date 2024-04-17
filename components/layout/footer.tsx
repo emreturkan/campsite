@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { DarkMode } from "../dark-mode";
 
 type Props = {};
 
@@ -9,13 +10,14 @@ const Footer = (props: Props) => {
       <p className="text-xs text-gray-500 dark:text-gray-400">
         © 2024 Campsite Inc. Tüm hakları saklıdır.
       </p>
-      <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+      <nav className="sm:ml-auto flex items-center gap-4 sm:gap-6">
         <Link className="text-xs hover:underline underline-offset-4" href="#">
           Hizmet Koşulları
         </Link>
         <Link className="text-xs hover:underline underline-offset-4" href="#">
           Gizlilik
         </Link>
+        <DarkMode />
       </nav>
     </footer>
   );

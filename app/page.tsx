@@ -8,13 +8,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { StarIcon } from "@radix-ui/react-icons";
+import { StarFilledIcon, StarIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 
 import { Link } from "next-view-transitions";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 export default function Component() {
   const settings = {
@@ -72,65 +75,100 @@ export default function Component() {
               konaklamak için muhteşem yerler.
             </p>
           </div>
-          <div className="w-80  lg:w-[1300px] relative">
-            <Slider {...settings} className="slider-container">
-              <div className="slide-item selection:none">
-                <Image
-                  alt="Image"
-                  className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-                  height="200"
-                  src="/img1.webp"
-                  width="400"
-                />
-              </div>
-              <div className="slide-item">
-                <Image
-                  alt="Image"
-                  className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-                  height="200"
-                  src="/img2.webp"
-                  width="400"
-                />
-              </div>
-              <div className="slide-item">
-                <Image
-                  alt="Image"
-                  className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-                  height="200"
-                  src="/img3.webp"
-                  width="400"
-                />
-              </div>
-              <div className="slide-item">
-                <Image
-                  alt="Image"
-                  className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-                  height="200"
-                  src="/img4.webp"
-                  width="400"
-                />
-              </div>
-            </Slider>
+          <div className=" relative">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full "
+            >
+              <CarouselContent>
+                <CarouselItem className="basis-1/2 lg:basis-1/4">
+                  <div className="slide-item selection:none">
+                    <Image
+                      alt="Image"
+                      className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+                      height="200"
+                      src="/img1.webp"
+                      width="400"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem className="basis-1/2 lg:basis-1/4">
+                  <div className="slide-item">
+                    <Image
+                      alt="Image"
+                      className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+                      height="200"
+                      src="/img2.webp"
+                      width="400"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem className="basis-1/2 lg:basis-1/4">
+                  <div className="slide-item">
+                    <Image
+                      alt="Image"
+                      className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+                      height="200"
+                      src="/img3.webp"
+                      width="400"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem className="basis-1/2 lg:basis-1/4">
+                  <div className="slide-item">
+                    <Image
+                      alt="Image"
+                      className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+                      height="200"
+                      src="/img4.webp"
+                      width="400"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem className="basis-1/2 lg:basis-1/4">
+                  <div className="slide-item">
+                    <Image
+                      alt="Image"
+                      className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+                      height="200"
+                      src="/img2.webp"
+                      width="400"
+                    />
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </section>
       <section className="w-full  py-12 md:py-24 lg:py-16 border-t">
+        <div className="space-y-3">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            Popüler kamp alanları
+          </h2>
+          <p className=" max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            Türkiye'den gelen gezginler arasında en popüler seçenekler
+          </p>
+        </div>
         <Link href={"/campsite"} className="flex justify-end my-4">
-          <Button className="rounded-full gap-1 p-3 border bg-gradient-to-r from-orange-500 to-orange-800 text-white">
+          <Button className="rounded-full gap-1 p-3 border bg-primary text-background">
+            <span>Tüm Kamp Alanları</span>
             <ChevronRightIcon className="w-5 h-5" />
-            <span>All Campsite</span>
           </Button>
         </Link>
         <div className=" grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4">
           <Card className="overflow-visible">
             <Link href="/campsite/1">
               <div className="aspect-card overflow-hidden rounded-t-lg">
-                <img
+                <Image
                   alt="Image"
                   className="aspect-card object-cover"
+                  width={500}
                   height={300}
                   src="/img1.webp"
-                  width={400}
                 />
               </div>
               <CardHeader className="p-4 flex flex-col gap-2">
@@ -138,22 +176,22 @@ export default function Component() {
                   Campsites in Santa Cruz
                 </CardTitle>
                 <CardDescription className="text-sm">
-                  Perfect for nature lovers. Surrounded by trees, with hiking
-                  trails nearby.
+                  Doğa severler için mükemmel. Ağaçlarla çevrili, yürüyüş
+                  Yakınlardaki patikalar.
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4 p-4">
                 <div className="flex items-center gap-2">
-                  <StarIcon className="w-4 h-4 !fill-yellow-400" />
-                  <StarIcon className="w-4 h-4 fill-yellow-400" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4" />
-                  <span className="text-xs ml-auto">5 reviews</span>
+                  <StarFilledIcon className="w-4 h-4 text-primary " />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-xs ml-auto">5 inceleme</span>
                 </div>
                 <div className="text-2xl font-semibold tracking-tighter">
-                  $120
-                  <span className="text-sm font-normal">/ night</span>
+                  ₺120
+                  <span className="text-sm font-normal">/ gece</span>
                 </div>
               </CardContent>
             </Link>
@@ -174,22 +212,22 @@ export default function Component() {
                   Beachfront Paradise
                 </CardTitle>
                 <CardDescription className="text-sm">
-                  Wake up to stunning ocean views. This beautiful villa is steps
-                  away from the beach.
+                  Muhteşem okyanus manzarasına uyanın. Bu güzel villa birkaç
+                  adım sahilden uzakta.
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4 p-4">
                 <div className="flex items-center gap-2">
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <span className="text-xs ml-auto">10 reviews</span>
+                  <StarFilledIcon className="w-4 h-4 text-primary " />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-xs ml-auto">10 inceleme</span>
                 </div>
                 <div className="text-2xl font-semibold tracking-tighter">
-                  $350
-                  <span className="text-sm font-normal">/ night</span>
+                  ₺350
+                  <span className="text-sm font-normal">/ gece</span>
                 </div>
               </CardContent>
             </Link>
@@ -210,22 +248,22 @@ export default function Component() {
                   Mountain View Retreat
                 </CardTitle>
                 <CardDescription className="text-sm">
-                  Peaceful and serene. This rental offers breathtaking views of
-                  the mountains.
+                  Huzurlu ve dingin. Bu kiralama nefes kesici manzaralar
+                  sunmaktadır dağlara.
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4 p-4">
                 <div className="flex items-center gap-2">
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <span className="text-xs ml-auto">8 reviews</span>
+                  <StarFilledIcon className="w-4 h-4 text-primary " />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-xs ml-auto">8 inceleme</span>
                 </div>
                 <div className="text-2xl font-semibold tracking-tighter">
-                  $300
-                  <span className="text-sm font-normal">/ night</span>
+                  ₺300
+                  <span className="text-sm font-normal">/ gece</span>
                 </div>
               </CardContent>
             </Link>
@@ -246,22 +284,21 @@ export default function Component() {
                   Modern City Apartment
                 </CardTitle>
                 <CardDescription className="text-sm">
-                  Located in the heart of the city. Stylish and comfortable with
-                  all the amenities.
+                  Şehrin kalbinde yer almaktadır. Şık ve konforlu tüm olanaklar.
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4 p-4">
                 <div className="flex items-center gap-2">
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <StarIcon className="w-4 h-4 fill-primary" />
-                  <span className="text-xs ml-auto">12 reviews</span>
+                  <StarFilledIcon className="w-4 h-4 text-primary " />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-primary" />
+                  <StarFilledIcon className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-xs ml-auto">12 inceleme</span>
                 </div>
                 <div className="text-2xl font-semibold tracking-tighter">
-                  $250
-                  <span className="text-sm font-normal">/ night</span>
+                  ₺250
+                  <span className="text-sm font-normal">/ gece</span>
                 </div>
               </CardContent>
             </Link>

@@ -20,15 +20,15 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en">
-        <body className={`${GeistSans.className} background`}>
+        <body className={`${GeistSans.className} `}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
             <div className="container grid gap-2 ">
-              <TopBar />
+              {/* <TopBar /> */}
               <Header />
               <main>{children}</main>
               <Footer />
