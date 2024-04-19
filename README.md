@@ -1,10 +1,12 @@
 ## RoadMap
 
 - [x] add shadcn 
+- [x] find great colors
 - [ ] add clerk for auth
+- [ ] add mock data
+- [ ] add user to favorites 
 - [ ] add mapbox for maps
 - [ ] create and merge a backend
-- [ ] find great colors
       
 
 
