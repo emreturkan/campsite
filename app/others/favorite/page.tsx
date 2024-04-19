@@ -1,11 +1,7 @@
+import { MapPinIcon, ShareIcon, StarIcon, TentIcon } from "@/assets/icons";
 import { Button } from "@/components/ui/button";
-import {
-  CardContent,
-  CardHeader,
-  Card,
-  CardFooter,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { CardContent, CardHeader, Card } from "@/components/ui/card";
+
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 
@@ -119,88 +115,5 @@ export default function Component() {
         </Card>
       </div>
     </div>
-  );
-}
-
-function MapPinIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
-
-function ShareIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-      <polyline points="16 6 12 2 8 6" />
-      <line x1="12" x2="12" y1="2" y2="15" />
-    </svg>
-  );
-}
-
-function StarIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-    </svg>
-  );
-}
-
-function TentIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M19 20 10 4" />
-      <path d="m5 20 9-16" />
-      <path d="M3 20h18" />
-      <path d="m12 15-3 5" />
-      <path d="m12 15 3 5" />
-    </svg>
   );
 }

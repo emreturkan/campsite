@@ -2,7 +2,6 @@ import { Separator } from "@/components/ui/separator";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { CardContent, Card } from "@/components/ui/card";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import { Link2Icon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import { FlameIcon, PocketKnifeIcon, TentIcon } from "@/assets/icons";
 
 export default function Component() {
   return (
@@ -200,109 +200,5 @@ export default function Component() {
         </CardContent>
       </Card>
     </div>
-  );
-}
-
-function ArrowLeftIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m12 19-7-7 7-7" />
-      <path d="M19 12H5" />
-    </svg>
-  );
-}
-
-function FlameIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
-    </svg>
-  );
-}
-
-function PocketKnifeIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 2v1c0 1 2 1 2 2S3 6 3 7s2 1 2 2-2 1-2 2 2 1 2 2" />
-      <path d="M18 6h.01" />
-      <path d="M6 18h.01" />
-      <path d="M20.83 8.83a4 4 0 0 0-5.66-5.66l-12 12a4 4 0 1 0 5.66 5.66Z" />
-      <path d="M18 11.66V22a4 4 0 0 0 4-4V6" />
-    </svg>
-  );
-}
-
-function TentIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M19 20 10 4" />
-      <path d="m5 20 9-16" />
-      <path d="M3 20h18" />
-      <path d="m12 15-3 5" />
-      <path d="m12 15 3 5" />
-    </svg>
-  );
-}
-
-function ChevronLeftIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m15 18-6-6 6-6" />
-    </svg>
   );
 }
